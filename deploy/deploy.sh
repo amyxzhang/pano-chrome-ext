@@ -6,8 +6,8 @@ ROOT=`pwd`
 
 # remove old zip and add new one
 cd ../
-rm eyebrowse-chrome-ext.zip
-zip -r eyebrowse-chrome-ext.zip eyebrowse-chrome-ext/ -x *.git*
+rm pano-chrome-ext.zip
+zip -r pano-chrome-ext.zip pano-chrome-ext/ -x *.git*
 
 # clean git
 cd $ROOT
