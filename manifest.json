@@ -40,14 +40,14 @@
         "*://*/*", 
         "http://eyebrowse-staging.csail.mit.edu/*", 
         "http://eyebrowse.csail.mit.edu/*", 
-        "https://eyebrowse.csail.mit.edu/*",
-	"http://pano.csail.mit.edu/*", 
+        "https://eyebrowse.csail.mit.edu/*", 
+        "http://pano.csail.mit.edu/*", 
         "http://localhost:8000/*", 
         "cookies", 
         "tabs", 
         "webNavigation"
     ], 
-    "version": "0.0.117", 
+    "version": "0.0.118", 
     "web_accessible_resources": [
         "css/prompt.css", 
         "html/prompt.html", 
