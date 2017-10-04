@@ -1,22 +1,16 @@
-eyebrowse-chrome-ext
+Pano-chrome-ext
 ===========
 [![Join the chat at https://gitter.im/haystack/eyebrowse-chrome-ext](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/haystack/eyebrowse-chrome-ext?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Eyebrowse allows users to automatically track and selectively publish their use
-of the Web in real-time. Currently, there is no simple way for the end-user to
-keep track of the vast time spent browsing the Web. Since there is no clear
-picture of how users access the Web as a whole, the Eyebrowse Project aims to
-allow public logging of Web usage through client-side services. Eyebrowse gives
-control to the user, while providing data for public use.
+This is the chrome extension code for the Pano project. Pano is a tool for people to annotate and comment on news articles with moral framing annotations towards learning about and understanding different moral foundations.
 
-The concept of Eyebrowse is to gather browsing history from participating
-users. Depending on the particular distribution, it may either be used in a
-context where the data goes into a public repository, or it may be used in a
-context where the data is shared in a controlled way (such as among a group of
-users, but not publicly).
+Learn more about Pano: http://pano.csail.mit.edu
+
+Read up on moral foundations theory: http://yourmorals.org
+
+Pano is built on top of the Eyebrowse system. The Eyebrowse chrome extension code can be found at: http://github.com/haystack/eyebrowse-chrome-ext
+
 
 ## Contact Info
-
-+ [@eyebrowse_proj](https://twitter.com/eyebrowse_proj)
-+ [eyebrowse@csail.mit.edu](mailto:eyebrowse@csail.mit.edu)
++ [axz@mit.edu](mailto:axz@mit.edu)
 + [Haystack Group Homepage](http://haystack.csail.mit.edu/)
