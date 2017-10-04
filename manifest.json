@@ -3,9 +3,9 @@
         "page": "html/background.html"
     }, 
     "browser_action": {
-        "default_icon": "img/eye.png", 
+        "default_icon": "img/pano-64.png", 
         "default_popup": "html/popup.html", 
-        "default_title": "Eyebrowse"
+        "default_title": "Pano"
     }, 
     "content_scripts": [
         {
@@ -28,19 +28,20 @@
         }
     ], 
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'", 
-    "description": "Eyebrowse by MIT CSAIL Haystack Group", 
+    "description": "Pano by MIT CSAIL Haystack Group", 
     "icons": {
-        "128": "img/eye-128.png", 
-        "16": "img/eye-16.png", 
-        "48": "img/eye-48.png"
+        "128": "img/pano-128.png", 
+        "16": "img/pano-16.png", 
+        "48": "img/pano-48.png"
     }, 
     "manifest_version": 2, 
-    "name": "Eyebrowse", 
+    "name": "Pano", 
     "permissions": [
         "*://*/*", 
         "http://eyebrowse-staging.csail.mit.edu/*", 
         "http://eyebrowse.csail.mit.edu/*", 
-        "https://eyebrowse.csail.mit.edu/*", 
+        "https://eyebrowse.csail.mit.edu/*",
+	"http://pano.csail.mit.edu/*", 
         "http://localhost:8000/*", 
         "cookies", 
         "tabs", 
