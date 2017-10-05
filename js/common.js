@@ -209,6 +209,7 @@ var highlightBlacklist = new Set([
     "twitter",
     "medium",
     "gmail",
+    "mail.google",
     "google",
     "messenger",
     "stackoverflow",

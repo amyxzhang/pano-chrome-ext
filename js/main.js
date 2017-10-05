@@ -2,7 +2,7 @@
 
 ///////////Global vars/////////////
 // global website base, set to localhost for testing, use deploy script to change
-var siteName = "Eyebrowse";
+var siteName = "Pano";
 var GOOGLE_FAVICON_URL = "http://www.google.com/s2/favicons?domain_url=";
 
 // nag settings
@@ -460,11 +460,11 @@ function openItem(tabId, url, favIconUrl, title, event_type) {
         }
         if (!user.inWhitelist(url) && !user.inBlackList(url) && user.shouldNag(url)) {
             timeCheck.allow = false; // we need to wait for prompt callback
-            chrome.tabs.sendMessage(tabId, {
-                "action": "prompt",
-                "type": "trackPrompt",
-                "baseUrl": baseUrl,
-            });
+          //  chrome.tabs.sendMessage(tabId, {
+          //      "action": "prompt",
+          //      "type": "trackPrompt",
+          //      "baseUrl": baseUrl,
+          //  });
             tmpItem = {
                 "tabId": tabId,
                 "url": url,

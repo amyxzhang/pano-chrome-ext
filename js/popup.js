@@ -1003,78 +1003,78 @@ function populateSubNav() {
 
     $("#username").append(user.get("username"));
 
-    $("#navSubLinks").append(" <a href='' id='incognito'></a> | ");
+   // $("#navSubLinks").append(" <a href='' id='incognito'></a> | ");
 
-    $("#navSubLinks").append(" <a href='' id='mark_visit'>Mark visit to this page</a> | ");
+    //$("#navSubLinks").append(" <a href='' id='mark_visit'>Mark visit to this page</a> | ");
 
-    $("#navSubLinks").append("<a href='' id='whitelist'></a>");
+    //$("#navSubLinks").append("<a href='' id='whitelist'></a>");
 
-    if (user.getIncognito() === true) {
-        $("#incognito").html("<span class='red'>Eyebrowse Off</span>");
-    } else {
-        $("#incognito").html("<span class='green'>Eyebrowse On</span>");
-    }
+    //if (user.getIncognito() === true) {
+    //    $("#incognito").html("<span class='red'>Eyebrowse Off</span>");
+    //} else {
+    //    $("#incognito").html("<span class='green'>Eyebrowse On</span>");
+    //}
 
 
-    if (user.inWhitelist(window.g_url)) {
-        $("#whitelist").text("Domain is shared");
-        $("#whitelist").css("cursor", "default");
-        $("#whitelist").css("color", "#000000");
-    } else {
-        $("#whitelist").text("Share this domain");
-    }
+    //if (user.inWhitelist(window.g_url)) {
+    //    $("#whitelist").text("Domain is shared");
+    //    $("#whitelist").css("cursor", "default");
+    //    $("#whitelist").css("color", "#000000");
+    //} else {
+    //    $("#whitelist").text("Share this domain");
+    //}
 
-    $("#mark_visit").click(function(e) {
-        e.preventDefault();
-        postMessage(null, window.g_url, function(data) {
-            $("#mark_visit").replaceWith("Page Marked");
-        });
-    });
+    //$("#mark_visit").click(function(e) {
+    //    e.preventDefault();
+    //    postMessage(null, window.g_url, function(data) {
+    //        $("#mark_visit").replaceWith("Page Marked");
+    //    });
+    //});
 
-    $("#incognito").click(function(e) {
-        e.preventDefault();
-        if (user.getIncognito() === false) {
-            user.setIncognito(true);
-            $("#incognito").html("<span class='red'>Eyebrowse Off</span>");
-            $(".logo").attr("src", "/img/eyes-closed.png");
-            chrome.browserAction.setIcon({
-                path: "/img/eyes-closed.png"
-            });
-            chrome.browserAction.setBadgeText({
-                "text": ""
-            });
-            emptyData();
-        } else {
-            user.setIncognito(false);
-            $("#incognito").html("<span class='green'>Eyebrowse On</span>");
-            $(".logo").attr("src", "/img/eye.png");
-            chrome.browserAction.setIcon({
-                path: "/img/eye.png"
-            });
-        }
-    });
+    //$("#incognito").click(function(e) {
+    //    e.preventDefault();
+    //    if (user.getIncognito() === false) {
+    //        user.setIncognito(true);
+    //        $("#incognito").html("<span class='red'>Eyebrowse Off</span>");
+    //        $(".logo").attr("src", "/img/eyes-closed.png");
+            // chrome.browserAction.setIcon({
+                // path: "/img/eyes-closed.png"
+            // });
+            // chrome.browserAction.setBadgeText({
+                // "text": ""
+            // });
+            // emptyData();
+        // } else {
+            // user.setIncognito(false);
+            // $("#incognito").html("<span class='green'>Eyebrowse On</span>");
+            // $(".logo").attr("src", "/img/eye.png");
+            // chrome.browserAction.setIcon({
+                // path: "/img/eye.png"
+            // });
+        // }
+    // });
 
-    $("#whitelist").click(function(e) {
-        e.preventDefault();
-        if ($("#whitelist").text() === "Share this domain") {
-            var whitelist = user.getWhitelist();
-            var uri = new URI(window.g_url);
-            var hostname = uri.hostname;
-
-            if (!user.inWhitelist(hostname)) {
-                whitelist.create({
-                    "url": hostname,
-                    "user": user.getResourceURI(),
-                });
-            }
-
-            postMessage(null, window.g_url, function() {
-                $("#whitelist").text("Domain is shared");
-                $("#whitelist").css("cursor", "default");
-                $("#whitelist").css("color", "#000000");
-            });
-        }
-    });
+    // $("#whitelist").click(function(e) {
+        // e.preventDefault();
+        // if ($("#whitelist").text() === "Share this domain") {
+            // var whitelist = user.getWhitelist();
+            // var uri = new URI(window.g_url);
+            // var hostname = uri.hostname;
+// 
+            // if (!user.inWhitelist(hostname)) {
+                // whitelist.create({
+                    // "url": hostname,
+                    // "user": user.getResourceURI(),
+                // });
+            // }
+// 
+            // postMessage(null, window.g_url, function() {
+                // $("#whitelist").text("Domain is shared");
+                // $("#whitelist").css("cursor", "default");
+                // $("#whitelist").css("color", "#000000");
+            // });
+        // }
+    // });
 
 }
 
