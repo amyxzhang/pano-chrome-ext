@@ -3,7 +3,7 @@ import json
 MAINJS_PATH = 'js/common.js'
 MANIFEST_PATH = 'manifest.json'
 DEV_URL = 'http://localhost:8000'
-PROD_URL = 'http://pano.csail.mit.edu'
+PROD_URL = 'https://pano.csail.mit.edu'
 
 
 def rewriteBaseUrl():
