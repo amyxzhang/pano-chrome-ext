@@ -590,8 +590,9 @@ function highlighting(user, baseUrl) {
           };
 
           if (comment.length > 0) {
-            console.log("Comment being made")
-            addComment(url, comment, res.data.highlight_id, tags_with_comment, callback);
+            console.log("Comment being made");
+            var title = document.title;
+            addComment(url, title, comment, res.data.highlight_id, tags_with_comment, callback);
           } else {
             callback();
           }
@@ -1050,9 +1051,11 @@ function highlighting(user, baseUrl) {
       return comment_box;
     }
 
-    function addComment(url, comment, highlight, tags, callback, parent_comment) {
+    function addComment(url, title, comment, highlight, tags, callback, parent_comment) {
       $.post(baseUrl + "/api/v1/history-data", {
         'url': url,
+        'title': title,
+        'favIconUrl': "http://www.google.com/s2/favicons?domain_url=" + url,
         'message': comment,
         'highlight': highlight,
         'tags': JSON.stringify(tags),
@@ -1172,7 +1175,8 @@ function highlighting(user, baseUrl) {
       var tag_name = $(this).attr('tag_name')
       var comment = $('.add-comment-box[tag_name=' + tag_name + ']').val();
       var highlight = $(this).attr('highlight');
-      addComment(url, tag_name, comment, highlight);
+      var title = document.title;
+      addComment(url, title, tag_name, comment, highlight);
     });
 
     // $('body').on('click', '.highlight-add-valuetag-submit', function(e) {
@@ -1211,6 +1215,7 @@ function highlighting(user, baseUrl) {
 
         var parent_comment = $(e.target).attr("comment_id");
         var highlight = $(e.target).attr('highlight');
+        var title = document.title;
 
         var callback = function(res) {
           makeAnnotationBox($(e.target).attr("highlight"), $(".highlight-itself").attr("color"))
@@ -1222,7 +1227,7 @@ function highlighting(user, baseUrl) {
           resetTagsToSave();
           $('.add-valuetag-tag').removeClass("selected").addClass("deselected").css("background-color", "#f7f7f7");
         }
-        addComment(url, comment, highlight, tags_to_save.comment, callback, parent_comment);
+        addComment(url, title, comment, highlight, tags_to_save.comment, callback, parent_comment);
       }
     });
 
